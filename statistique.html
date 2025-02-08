@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Pie Chart</title>
+  <style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #fcffeb;
+  font-family: 'Poppins', sans-serif;
+}
+
+.chart-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chart-title {
+  font-size: 2.5rem;
+  color: #0A0A44;
+  margin-bottom: 100px; /* Espace entre le titre et le graphique */
+  text-align: center; /* Centrer horizontalement */
+}
+
+.pie-chart {
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  position: relative;
+  background: conic-gradient(
+    #FFEB6A 0% 33%,  /* Pastel Yellow */
+    #B6A0E8 33% 66%, /* Pastel Purple */
+    #F7A8D8 66% 100%  /* Pastel Pink */
+  );
+  background-color: transparent;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); 
+}
+
+.pie-section {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform-origin: 50% 50%;
+  text-align: center;
+}
+
+.yellow {
+  transform: rotate(0deg);
+}
+
+.purple {
+  transform: rotate(33deg);
+}
+
+.pink {
+  transform: rotate(66deg);
+}
+
+.percentage {
+  position: absolute;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #0A0A44;
+}
+
+.legend {
+  margin-left: 50px;
+  font-size: 1.5rem;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.legend-color {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+  </style>
+</head>
+<body>
+  <div class="chart-container">
+    <div>
+      <h1 class="chart-title">Statistiques</h1>
+      <div class="pie-chart">
+        <div class="pie-section yellow">
+          <!-- <span class="percentage">33%</span> -->
+        </div>
+        <div class="pie-section purple">
+          <!-- <span class="percentage">33%</span> -->
+        </div>
+        <div class="pie-section pink">
+          <!-- <span class="percentage">34%</span> -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Legend with color samples -->
+    <div class="legend">
+      <div class="legend-item">
+        <div class="legend-color" style="background-color: #FFEB6A;"></div>
+        <span>33% - Jaune Pastel</span>
+      </div>
+      <div class="legend-item">
+        <div class="legend-color" style="background-color: #B6A0E8;"></div>
+        <span>33% - Violet Pastel</span>
+      </div>
+      <div class="legend-item">
+        <div class="legend-color" style="background-color: #F7A8D8;"></div>
+        <span>34% - Rose Pastel</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
